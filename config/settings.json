@@ -1,0 +1,17 @@
+{
+  "payload_init": {
+	"messages": [],
+	"max_tokens": 16384,
+	"temperature": 0.1,
+	"cache_prompt": true
+  },
+  "url": "http://127.0.0.1:8989/v1/chat/completions",
+  "headers": {
+	"Accept": "application/json",
+	"Content-Type": "application/json",
+    "Authorization": "Bearer sk-xxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "whisper_address": "http://192.168.3.2:8889/inference",
+  "think_model_address": "http://127.0.0.1:8989/v1/chat/completions",
+  "think_model": "local"
+}

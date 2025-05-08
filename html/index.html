@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>web-llm</title>
+	<link rel="stylesheet" href="/html/style.css">
+
+	<script src="/vendor/microsoft/monako-editor/node_modules/monaco-editor/min/vs/loader.js"></script>
+	<script src="/html/fn.js"></script>
+	<script src="/html/lang.js"></script>
+	<script src="/html/cRecordingManager.js"></script>
+	<script src="/html/cRequest.js"></script>
+	<script src="/html/cResponseData.js"></script>
+	<script src="/html/cSettings.js"></script>
+	<script src="/html/cFilesList.js"></script>
+	<script src="/html/cMessage.js"></script>
+	<script src="/html/cEventsHandler.js"></script>
+	<script src="/html/cChatList.js"></script>
+	<script src="/html/script.js"></script>
+</head>
+<body>
+
+<div class="p_wr">
+
+	<div class="l_wr">
+
+		<h2>Files:</h2>
+		<div class="files_list">
+		</div>
+
+	</div>
+	<div class="r_wr">
+		<div class="chat_container">
+			<div class="chat_content">
+				<!-- Chat content goes here -->
+			</div>
+		</div>
+
+		<div class="form_wrapper">
+			<form class="chat_form">
+				<div class="current_path">Current path: <span class="current_path_text"></span></div>
+				<div class="chat_form_wr">
+					<textarea class="chat_message_input" placeholder="Enter your message here..."></textarea>
+					<div class="buttons_wr">
+						<button class="submit_btn" type="submit">Send</button>
+<!--						<button class="screenshot_btn" type="button" title="Вставить скриншот">📷</button> &lt;!&ndash; Added screenshot button &ndash;&gt;-->
+						<button class="record_btn" type="button">●</button>
+					</div>
+				</div>
+				<div class="file_list_popup">
+					<ul>
+						<!-- File list will be populated here -->
+					</ul>
+				</div>
+			</form>
+		</div>
+
+	</div>
+</div>
+
+<div id="loading-animation">
+	<div class="spinner"></div>
+</div>
+
+<span class="settings_button">⚙️</span>
+<span class="edit_button">✍️</span>
+
+<div id="settings_popup" class="settings_popup">
+	<div class="settings_popup_content">
+		<div class="header">
+			<h3>Settings</h3><span class="close_button">&times;</span>
+		</div>
+		<div class="chat_path">
+			<label>
+				Project Path:
+				<input type="text" class="chat_path_input" placeholder="Enter project path here...">
+			</label>
+		</div>
+		<div class="settings_form_wr">
+			<label class="settings_form_gr_wr">
+				<div class="label_text">Clear context</div>
+				<input type="checkbox" class="clear_context">
+			</label>
+		</div>
+		<!-- Removed Auto answer on wrong format checkbox -->
+		<div class="settings_form_wr">
+			<label class="settings_form_gr_wr">
+				<div class="label_text">Permanent prefix text:</div>
+				<textarea class="prefix_text" placeholder="Permanent prefix text"></textarea>
+			</label>
+		</div>
+		<!-- New checkbox for "Check Answer" -->
+		<div class="settings_form_wr">
+			<label class="settings_form_gr_wr">
+				<div class="label_text">Check Answer</div>
+				<input type="checkbox" class="check_answer">
+			</label>
+		</div>
+		<!-- New checkboxes for "Include project structure" -->
+		<!--
+		<div class="settings_form_wr">
+			<label class="settings_form_gr_wr">
+				<div class="label_text">Include project structure</div>
+				<input type="checkbox" class="include_project_structure">
+			</label>
+		</div>
+		-->
+		<!-- New checkboxes for "Use descriptions" and "Prepare plan" -->
+		<div class="settings_form_wr">
+			<label class="settings_form_gr_wr">
+				<div class="label_text">Use descriptions</div>
+				<input type="checkbox" class="use_descriptions">
+			</label>
+		</div>
+		<div class="settings_form_wr">
+			<label class="settings_form_gr_wr">
+				<div class="label_text">Prepare plan</div>
+				<input type="checkbox" class="prepare_plan">
+			</label>
+		</div>
+		<div class="settings_form_wr">
+			<label class="settings_form_gr_wr">
+				<div class="label_text">Select Configuration:</div>
+				<select class="settings_select">
+					<!-- Configuration options will be populated here -->
+				</select>
+			</label>
+		</div>
+
+		<div class="settings_form_wr">
+			<button class="index_files_btn" type="button">Index files</button>
+		</div>
+
+		<div class="settings_form_wr">
+			<button class="include_files_btn" type="button">Include files</button>
+		</div>
+
+	</div>
+</div>
+
+<div id="includes_popup" class="includes_popup">
+	<div class="includes_popup_content">
+		<div class="header">
+			<h3>Include Files</h3><span class="close_button">&times;</span>
+		</div>
+		<div class="includes_list">
+			<!-- Includes list will be populated here -->
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
